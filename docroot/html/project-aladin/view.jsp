@@ -19,3 +19,5 @@
 <portlet:defineObjects />
 
 This is the <b>Project Aladin</b> portlet in View mode.
+Lollo rulez.
+Pergreff GHEI!!!
