@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="it.mal.projectaladdin.model.impl.CategoryModelImpl">
+		<attributes>
+			<id name="categoryId" />
+			<basic name="name" />
+			<basic name="author" />
+			<basic name="description" />
+			<basic name="parentCategory" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="it.mal.projectaladdin.model.impl.CategoryWishlistModelImpl">
+		<id-class class="it.mal.projectaladdin.service.persistence.CategoryWishlistPK" />
+		<attributes>
+			<id name="categoryId" />
+			<id name="wishlistId" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="it.mal.projectaladdin.model.impl.WishModelImpl">
+		<attributes>
+			<id name="wishId" />
+			<basic name="name" />
+			<basic name="description" />
+			<basic name="price" />
+			<basic name="url" />
+			<basic name="image" />
+			<basic name="creationDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="it.mal.projectaladdin.model.impl.WishlistModelImpl">
+		<attributes>
+			<id name="wishlistId" />
+			<basic name="userId" />
+			<basic name="wishId" />
+			<basic name="rating" />
+			<basic name="comment">
+				<column name="COMMENT_" />
+			</basic>
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="it.mal.projectaladdin.model.impl.CategoryImpl" name="Category">
+		<table name="ALD_Category" />
+		<attributes />
+	</entity>
+	<entity class="it.mal.projectaladdin.model.impl.CategoryWishlistImpl" name="CategoryWishlist">
+		<table name="ALD_CategoryWishlist" />
+		<attributes />
+	</entity>
+	<entity class="it.mal.projectaladdin.model.impl.WishImpl" name="Wish">
+		<table name="ALD_Wish" />
+		<attributes />
+	</entity>
+	<entity class="it.mal.projectaladdin.model.impl.WishlistImpl" name="Wishlist">
+		<table name="ALD_Wishlist" />
+		<attributes />
+	</entity>
+</entity-mappings>

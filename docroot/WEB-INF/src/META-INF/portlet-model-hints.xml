@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="it.mal.projectaladdin.model.Category">
+		<field name="categoryId" type="long" />
+		<field name="name" type="String" />
+		<field name="author" type="long" />
+		<field name="description" type="String" />
+		<field name="parentCategory" type="long" />
+	</model>
+	<model name="it.mal.projectaladdin.model.CategoryWishlist">
+		<field name="categoryId" type="long" />
+		<field name="wishlistId" type="long" />
+	</model>
+	<model name="it.mal.projectaladdin.model.Wish">
+		<field name="wishId" type="long" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+		<field name="price" type="double" />
+		<field name="url" type="String" />
+		<field name="image" type="String" />
+		<field name="creationDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="it.mal.projectaladdin.model.Wishlist">
+		<field name="wishlistId" type="long" />
+		<field name="userId" type="long" />
+		<field name="wishId" type="long" />
+		<field name="rating" type="int" />
+		<field name="comment" type="String" />
+	</model>
+</model-hints>

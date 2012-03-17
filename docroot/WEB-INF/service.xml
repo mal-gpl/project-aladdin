@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_0_0.dtd">
+<service-builder package-path="it.mal.projectaladdin">
+    <author>MAL</author>
+    <namespace>ALD</namespace>
+    <entity local-service="true" remote-service="false" name="Wish">
+        <column name="wishId" type="long" primary="true"></column>
+        <column name="name" type="String"></column>
+        <column name="description" type="String"></column>
+        <column name="price" type="double"></column>
+        <column name="url" type="String"></column>
+        <column name="image" type="String"></column>
+        <column name="creationDate" type="Date"></column>
+        <column name="modifiedDate" type="Date"></column>
+        <finder name="ByName" return-type="Collection">
+            <finder-column name="name"></finder-column>
+        </finder>
+    </entity>
+    <entity name="Wishlist" local-service="true" remote-service="false">
+        <column name="wishlistId" type="long" primary="true"></column>
+        <column name="userId" type="long"></column>
+        <column name="wishId" type="long"></column>
+        <column name="rating" type="int"></column>
+        <column name="comment" type="String"></column>
+        <finder name="ByUserId" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+        </finder>
+        <finder name="ByUserIdRating" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+            <finder-column name="rating"></finder-column>
+        </finder>
+        <finder name="ByRating" return-type="Collection">
+            <finder-column name="rating"></finder-column>
+        </finder>
+    </entity>
+    <entity name="Category" local-service="true" remote-service="false">
+        <column name="categoryId" type="long" primary="true"></column>
+        <column name="name" type="String"></column>
+        <column name="author" type="long"></column>
+        <column name="description" type="String"></column>
+        <column name="parentCategory" type="long"></column>
+        <finder name="ByName" return-type="Collection">
+            <finder-column name="name"></finder-column>
+        </finder>
+        <finder name="ByAuthor" return-type="Collection">
+            <finder-column name="author"></finder-column>
+        </finder>
+        <finder name="ByParentCategory" return-type="Collection">
+            <finder-column name="parentCategory"></finder-column>
+        </finder>
+    </entity>
+    <entity name="CategoryWishlist" remote-service="false" local-service="true">
+        <column name="categoryId" type="long" primary="true"></column>
+        <column name="wishlistId" type="long" primary="true"></column>
+    </entity>
+</service-builder>

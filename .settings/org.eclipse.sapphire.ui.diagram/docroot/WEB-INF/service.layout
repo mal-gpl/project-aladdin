@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram-geometry>
+    <grid>
+        <visible>true</visible>
+    </grid>
+    <guides>
+        <visible>false</visible>
+    </guides>
+    <node>
+        <id>Entity#Wish</id>
+        <bounds x="50" y="50"/>
+    </node>
+    <node>
+        <id>Entity#Wishlist</id>
+        <bounds x="230" y="170"/>
+    </node>
+    <node>
+        <id>Entity#Category</id>
+        <bounds x="580" y="30"/>
+    </node>
+    <node>
+        <id>Entity#CategoryWishlist</id>
+        <bounds x="450" y="260"/>
+    </node>
+</diagram-geometry>

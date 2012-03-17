@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="it.mal.projectaladdin.service.CategoryLocalService" class="it.mal.projectaladdin.service.impl.CategoryLocalServiceImpl" />
+	<bean id="it.mal.projectaladdin.service.CategoryLocalServiceUtil" class="it.mal.projectaladdin.service.CategoryLocalServiceUtil">
+		<property name="service" ref="it.mal.projectaladdin.service.CategoryLocalService" />
+	</bean>
+	<bean id="it.mal.projectaladdin.service.persistence.CategoryPersistence" class="it.mal.projectaladdin.service.persistence.CategoryPersistenceImpl" parent="basePersistence" />
+	<bean id="it.mal.projectaladdin.service.CategoryWishlistLocalService" class="it.mal.projectaladdin.service.impl.CategoryWishlistLocalServiceImpl" />
+	<bean id="it.mal.projectaladdin.service.CategoryWishlistLocalServiceUtil" class="it.mal.projectaladdin.service.CategoryWishlistLocalServiceUtil">
+		<property name="service" ref="it.mal.projectaladdin.service.CategoryWishlistLocalService" />
+	</bean>
+	<bean id="it.mal.projectaladdin.service.persistence.CategoryWishlistPersistence" class="it.mal.projectaladdin.service.persistence.CategoryWishlistPersistenceImpl" parent="basePersistence" />
+	<bean id="it.mal.projectaladdin.service.WishLocalService" class="it.mal.projectaladdin.service.impl.WishLocalServiceImpl" />
+	<bean id="it.mal.projectaladdin.service.WishLocalServiceUtil" class="it.mal.projectaladdin.service.WishLocalServiceUtil">
+		<property name="service" ref="it.mal.projectaladdin.service.WishLocalService" />
+	</bean>
+	<bean id="it.mal.projectaladdin.service.persistence.WishPersistence" class="it.mal.projectaladdin.service.persistence.WishPersistenceImpl" parent="basePersistence" />
+	<bean id="it.mal.projectaladdin.service.WishlistLocalService" class="it.mal.projectaladdin.service.impl.WishlistLocalServiceImpl" />
+	<bean id="it.mal.projectaladdin.service.WishlistLocalServiceUtil" class="it.mal.projectaladdin.service.WishlistLocalServiceUtil">
+		<property name="service" ref="it.mal.projectaladdin.service.WishlistLocalService" />
+	</bean>
+	<bean id="it.mal.projectaladdin.service.persistence.WishlistPersistence" class="it.mal.projectaladdin.service.persistence.WishlistPersistenceImpl" parent="basePersistence" />
+</beans>

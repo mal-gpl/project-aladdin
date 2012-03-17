@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="it.mal.projectaladdin.model.Category" />
+	<import class="it.mal.projectaladdin.model.CategoryWishlist" />
+	<import class="it.mal.projectaladdin.model.Wish" />
+	<import class="it.mal.projectaladdin.model.Wishlist" />
+	<class name="it.mal.projectaladdin.model.impl.CategoryImpl" table="ALD_Category">
+		<cache usage="read-write" />
+		<id name="categoryId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="author" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="parentCategory" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="it.mal.projectaladdin.model.impl.CategoryWishlistImpl" table="ALD_CategoryWishlist">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.mal.projectaladdin.service.persistence.CategoryWishlistPK">
+			<key-property name="categoryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="wishlistId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+	</class>
+	<class name="it.mal.projectaladdin.model.impl.WishImpl" table="ALD_Wish">
+		<cache usage="read-write" />
+		<id name="wishId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="price" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="url" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="image" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="creationDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.mal.projectaladdin.model.impl.WishlistImpl" table="ALD_Wishlist">
+		<cache usage="read-write" />
+		<id name="wishlistId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="wishId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="rating" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="comment" type="com.liferay.portal.dao.orm.hibernate.StringType" column="comment_" />
+	</class>
+</hibernate-mapping>
