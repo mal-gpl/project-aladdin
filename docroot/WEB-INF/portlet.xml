@@ -5,8 +5,21 @@
         <portlet-name>project-aladin</portlet-name>
         <display-name>Project Aladin</display-name>
         <portlet-class>it.mal.portlet.controller.CoreController</portlet-class>
+        <init-param>
+            <name>view-jsp</name>
+            <value>/html/project-aladin/view.jsp</value>
+        </init-param>
         <supports>
             <mime-type>text/html</mime-type>
+            <portlet-mode>edit</portlet-mode>
+            <portlet-mode>view</portlet-mode>
         </supports>
+        <supported-locale>it_IT</supported-locale>
+        <resource-bundle>it.mal.content.Language</resource-bundle>
+        <portlet-info>
+            <title>Project Aladin</title>
+            <short-title>Project Aladin</short-title>
+            <keywords>Project Aladin</keywords>
+        </portlet-info>
     </portlet>
 </portlet-app>

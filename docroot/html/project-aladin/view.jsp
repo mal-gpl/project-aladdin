@@ -4,10 +4,11 @@
 
 	<c:when test="<%= themeDisplay.isSignedIn() %>">
 		Benvenuto, <%= user.getScreenName() %>
+		<liferay-util:include page="/html/project-aladin/main.jsp" servletContext="<%= pageContext.getServletContext() %>"/>
 	</c:when>
 	
 	<c:otherwise>
-		<%-- TODO redirect to login page --%>
+		<liferay-util:include page="/html/project-aladin/login.jsp" servletContext="<%= pageContext.getServletContext() %>" />
 	</c:otherwise>
 
 </c:choose>
